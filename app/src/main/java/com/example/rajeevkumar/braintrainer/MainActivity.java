@@ -1,6 +1,7 @@
 package com.example.rajeevkumar.braintrainer;
 
 import android.os.CountDownTimer;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     TextView pointsTextView;
     TextView timerTextView;
     Button playAgainButton;
+    ConstraintLayout gameConstraintLayout;
 
     public void playAgain(View view){
 
@@ -39,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         playAgainButton.setVisibility(View.INVISIBLE);
         generateQuestion();
 
-        new CountDownTimer(3000, 1000) {
+        new CountDownTimer(31000, 1000) {
 
             @Override
             public void onTick(long milliisUntilFinished) {
@@ -53,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
                 playAgainButton.setVisibility(View.VISIBLE);
                 timerTextView.setText("0s");
-                resultTextView.setText("Your score:" + Integer.toString(score) + "/" + Integer.toString(numberOfQuestions));
+                resultTextView.setText("Your score: " + Integer.toString(score) + "/" + Integer.toString(numberOfQuestions));
 
             }
         }.start();
@@ -126,7 +128,9 @@ public class MainActivity extends AppCompatActivity {
     public void start(View view){
 
         startButton.setVisibility(View.INVISIBLE);
-        Log.i("Press Button", "Pressed");
+        gameConstraintLayout.setVisibility(ConstraintLayout.VISIBLE);
+        playAgain(findViewById(R.id.playAgainButton));
+        //Log.i("Press Button", "Pressed");
 
     }
 
@@ -145,11 +149,9 @@ public class MainActivity extends AppCompatActivity {
         pointsTextView = (TextView)findViewById(R.id.pointsTextView);
         timerTextView = (TextView)findViewById(R.id.timerTextView);
         playAgainButton =(Button)findViewById(R.id.playAgainButton);
+        gameConstraintLayout = (ConstraintLayout)findViewById(R.id.gameConstraintLayout);
 
         //generateQuestion();
-
-        playAgain(findViewById(R.id.playAgainButton));
-
 
     }
 }
