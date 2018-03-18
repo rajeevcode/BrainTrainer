@@ -151,7 +151,5 @@ public class MainActivity extends AppCompatActivity {
         playAgainButton =(Button)findViewById(R.id.playAgainButton);
         gameConstraintLayout = (ConstraintLayout)findViewById(R.id.gameConstraintLayout);
 
-        //generateQuestion();
-
     }
 }
