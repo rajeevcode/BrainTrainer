@@ -4,12 +4,9 @@ import android.os.CountDownTimer;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -70,13 +67,12 @@ public class MainActivity extends AppCompatActivity {
 
         sumTextView.setText(Integer.toString(a) + "+" +Integer.toString(b));
 
-        //this is give 0,1,2,3
+        //this will give 0,1,2,3
         locationOfCorrectAnswer=rand.nextInt(4);
 
         answers.clear();
 
         int incorrectAnswer;
-
 
         for (int i=0; i<4; i++){
 
