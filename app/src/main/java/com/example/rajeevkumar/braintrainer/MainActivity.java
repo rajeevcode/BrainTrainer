@@ -4,6 +4,7 @@ import android.os.CountDownTimer;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -118,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
         pointsTextView.setText(Integer.toString(score) + "/" + Integer.toString(numberOfQuestions));
         generateQuestion();
 
-        //Log.i("Press tag", (String) view.getTag());
+        Log.i("Press tag", (String) view.getTag());
     }
 
     public void start(View view){
@@ -126,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
         startButton.setVisibility(View.INVISIBLE);
         gameConstraintLayout.setVisibility(ConstraintLayout.VISIBLE);
         playAgain(findViewById(R.id.playAgainButton));
-        //Log.i("Press Button", "Pressed");
+        Log.i("Press Button", "Pressed");
 
     }
 
